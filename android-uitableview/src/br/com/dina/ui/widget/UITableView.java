@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -155,6 +156,8 @@ public class UITableView extends LinearLayout {
 		}
 		if(item.getSubtitle() != null) {
 			((TextView) view.findViewById(R.id.subtitle)).setText(item.getSubtitle());
+			((TextView) view.findViewById(R.id.subtitle)).setEllipsize(TruncateAt.MARQUEE);
+			((TextView) view.findViewById(R.id.subtitle)).setSelected(true);
 		}
 		else {
 			((TextView) view.findViewById(R.id.subtitle)).setVisibility(View.GONE);

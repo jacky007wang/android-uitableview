@@ -1,8 +1,8 @@
 package br.com.dina.ui.widget;
 
-import br.com.dina.ui.R;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import br.com.dina.ui.R;
 
 public class UIButton extends LinearLayout {
 
@@ -40,6 +41,8 @@ public class UIButton extends LinearLayout {
 		
 		if(mSubtitle != null) {
 			((TextView) mButtonContainer.findViewById(R.id.subtitle)).setText(mSubtitle.toString());
+			((TextView) mButtonContainer.findViewById(R.id.subtitle)).setEllipsize(TruncateAt.MARQUEE);
+			((TextView) mButtonContainer.findViewById(R.id.subtitle)).setSelected(true);
 		} else {
 			((TextView) mButtonContainer.findViewById(R.id.subtitle)).setVisibility(View.GONE);
 		}
